@@ -14,7 +14,7 @@ import { rhythm } from "../utils/typography"
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
           fixed(width: 50, height: 50) {
             ...GatsbyImageSharpFixed
@@ -57,10 +57,10 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+        <strong>{author.name}</strong> ({author.summary}) tomonidan yozilgan. Tibbiyyotga aloqam bo'lmasada eng so'ngi ingliz tilidagi koronavirusga oid ilmiy tadqiqotlarni o'zbek tilida xalqimizga qo'limdan kelganicha yetkazishni xarakat qilaman. 
+        {` \n`}
+        <a href={`https://www.linkedin.com/in/muslimjon-kholjuraev-458879143/`}>
+          Men xaqimda ma'lumotni ushbu LinkedIn profilidan olishingiz mumkin. 
         </a>
       </p>
     </div>
